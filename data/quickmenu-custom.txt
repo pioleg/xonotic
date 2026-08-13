@@ -1,0 +1,127 @@
+// This quickmenu example file can be loaded by setting
+// hud_panel_quickmenu_file quickmenu_example.txt
+// and executing "quickmenu file"
+// For more options see "quickmenu help"
+
+//	"Menu"
+//		"Subenu"
+//		"Subenu"
+//		"Chat"
+//			"Send to all"	"say message"
+//			"Send to team"	"say_team message"
+//			"Public to:"	"commandmode say %s:" ALLPLAYERS_BUT_ME
+//			"Private to:"	"commandmode tell %s:" ALLPLAYERS_BUT_ME
+//		"Chat"
+//
+//		"Toggle cvar (0/1)"		"toggle cvar"
+//		"Invert toggle cvar"	"toggle cvar 0 1"
+//		"Cycle cvar (a,b,c...)"	"toggle cvar 2 1 3 7"
+//		"Command"			"command"
+//		"Multiple commands"	"command; command"
+//		"screenshot"		"wait; screenshot"
+//	"Menu"
+
+// Commands that accept a player's name as parameter (%s), followed by one of
+// these special keywords:
+//   ALLPLAYERS_BUT_ME
+//   ALLPLAYERS
+//   OWNTEAMPLAYERS_BUT_ME
+//   OWNTEAMPLAYERS
+//   ENEMYTEAMPLAYERS
+// lets you pick a player's name from a list:
+
+"Chat"
+	"good game"			"say gg"
+	"good luck"			"say glhf"
+	"nice one"			"say nice one"
+	"got to go"			"say gtg bb"
+	"bye bye"			"say bb"
+	"Public chat with"	"commandmode say %s:" ALLPLAYERS_BUT_ME
+	"Private chat with"	"commandmode tell \"%s\"" ALLPLAYERS_BUT_ME
+	// "Team chat"
+		// "strength soon"		"say_team strength soon"
+		// "free item, icon"	"say_team s; g_waypointsprite_team_here_p"
+	// "Team chat"
+"Chat"
+
+"Call a vote"
+	"Restart the map"	"vcall restart"
+	"Reset the match"	"vcall resetmatch"
+	"End match"			"vcall endmatch"
+	"Reduce match time"	"vcall reducematchtime"
+	"Extend match time"	"vcall extendmatchtime"
+	"Shuffle teams"		"vcall shuffleteams"
+	"Kick player"		"vcall kick \"%s\"" ALLPLAYERS_BUT_ME
+		"Execute"
+			"Restart the map"	"restart"
+			"Reset the match"	"resetmatch"
+			"End match"			"endmatch"
+			"Reduce match time"	"reducematchtime"
+			"Extend match time"	"extendmatchtime"
+			"Shuffle teams"		"shuffleteams"
+			"Kick player"		"kick \"%s\"" ALLPLAYERS_BUT_ME
+		"Execute"
+"Call a vote"
+
+"Gameplay"
+	"Bots 0/2/4/8" "toggle minplayers 0 2 4 8; toggle minplayers_per_team 0 1 2 4"
+	"Gametype"
+		"Duel"				"gametype duel"
+		"Deathmatch"		"gametype dm"
+		"Team Deathmatch"	"gametype tdm"
+		"Capture the Flag"	"gametype ctf"
+		"Clan Arena"		"gametype ca"
+		"Freeze Tag"		"gametype ft"
+		"Mayhem"			"gametype mayhem"
+		"Team Mayhem"		"gametype tmayhem"
+		"Keepaway"			"gametype ka"
+		"Team Keepaway"		"gametype tka"
+		"Key Hunt"			"gametype kh"
+		"Last Man Standing"	"gametype lms"
+		"Domination"		"gametype dom"
+		"Nexball"			"gametype nb"
+		"Onslaught"			"gametype ons"
+		"Assault"			"gametype as"
+		"Survival"			"gametype surv"
+		"Race"				"gametype rc"
+		"Race CTS"			"gametype cts"
+		"Invasion"			"gametype inv"
+	"Gametype"
+"Gameplay"
+
+"Settings"
+	"View/HUD settings"
+		"3rd person view"		"toggle chase_active"
+		"Models like mine"		"toggle cl_forceplayermodels"
+		"Colors like mine"		"toggle cl_forceplayercolors"
+		"Names above players"	"toggle hud_shownames"
+		"FPS"					"toggle hud_panel_engineinfo"
+		"Net graph"				"toggle shownetgraph"
+		"Crosshair per weapon"	"toggle crosshair_per_weapon"
+		"Weapon model"			"toggle r_drawviewmodel"
+	"View/HUD settings"
+	
+	"Video settings"
+		"Picmip"		"toggle gl_picmip_world 100 0; vid_restart"
+		"Fullscreen"	"toggle vid_fullscreen; vid_restart"
+		"Weapon model"	"toggle r_drawviewmodel"
+		"Brightnes"		"toggle r_hdr_scenebrightness 1 1.25 1.5 1.75 2"
+		"Ambient light"	"toggle r_ambient 0 4 8 12 16"
+	"Video settings"
+	
+	"Sound settings"
+		"Hit sound"		"toggle cl_hitsound"
+		"Chat sound"	"toggle con_chatsound"
+		"Announcer"		"toggle snd_channel0volume"
+		"Ambient"		"toggle snd_channel9volume; toggle snd_staticvolume"
+		// "Music"			"toggle snd_channel8volume; toggle bgmvolume" // music doesn't stop
+	"Sound settings"
+	
+	"Spectator camera"
+		// "Increase speed"	"weapnext"
+		// "Decrease speed"	"weapprev"
+		"Wall collision"	"toggle cl_clippedspectating"
+		"Spectate a player"	"spectate \"%s\"" ALLPLAYERS_BUT_ME
+	"Spectator camera"
+"Settings"
+
